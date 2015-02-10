@@ -37,7 +37,7 @@ set a variable called companies = to all the Companies.
   products = Product.order(:name)
 
 2. set a variable called locations = to all the Locations ordered by street_name.
-
+  location
 
 3. set a variable called reviews = to all the Reviews ordered by rating.
 
