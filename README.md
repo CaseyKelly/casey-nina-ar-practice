@@ -233,3 +233,4 @@ Edit Delete
 * make a "/locations" page which lists al locations, regardless of company.
 * Make a "/products" page which lists ALL the products, regardless of company.
 * Make a "/reviews" page which lists ALL the reviews, regardless of product, ordered by Rating.
+# mustached-octo-adventure
