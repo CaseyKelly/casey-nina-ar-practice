@@ -1,4 +1,4 @@
-<table border=1>
+<table border=1 class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -13,7 +13,7 @@
   <tbody>
     <% @companies.each do |company| %>
     <tr>
-      <td><%= company.name %></td>
+      <td><%= link_to company.name, company_path(company) %></td>
       <td><%= company.suffix %></td>
       <td><%= company.catch_phrase %></td>
       <td><%= company.email %></td>
