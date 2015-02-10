@@ -1,4 +1,4 @@
-<div class="pull-right"><%= link_to 'Create Company', new_company_path, class: 'btn btn-primary' %></div>
+<div class="pull-left"><%= link_to 'Create Company', new_company_path, class: 'btn btn-primary' %></div>
 
 <table border=1 class="table">
   <thead>
@@ -21,6 +21,7 @@
       <td><%= company.email %></td>
       <td><%= company.start_date %></td>
       <td><%= company.industry %></td>
+      <td><%= link_to 'Delete Company', company_path(company), method: :delete, data: {confirm: "Are you totally sure??"}, class: 'btn btn-danger' %></td>
     </tr>
     <% end %>
   </tbody>
