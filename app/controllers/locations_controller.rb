@@ -7,6 +7,7 @@ class LocationsController < ApplicationController
   end
 
   def show
+    @company = Company.find(params[:company_id])
   end
 
   def index
@@ -15,6 +16,7 @@ class LocationsController < ApplicationController
   end
 
   def edit
+    @company = Company.find(params[:company_id])
   end
 
   def create
@@ -26,6 +28,12 @@ class LocationsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def update
+    @location.update(location_params)
+    @company = @location.company
+    redirect_to company_path(@company)
   end
 
   def destroy

@@ -37,7 +37,7 @@
   <tbody>
     <% @company.locations.each do |location| %>
     <tr>
-      <td><b><%= location.city %></b></td>
+      <td><b><%= link_to location.city, company_location_path(@company, location) %></b></td>
       <td><%= location.street_name %></td>
       <td><%= location.state %></td>
       <td><%= location.zip_code %></td>
