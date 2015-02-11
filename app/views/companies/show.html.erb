@@ -10,17 +10,17 @@
       <li class="list-group-item"><b>Email: </b><%= @company.email %></li>
       <li class="list-group-item"><b>Start Date: </b><%= @company.start_date %></li>
       <li class="list-group-item"><b>Industry: </b><%= @company.industry %></li>
+      <li class="list-group-item">
+        <%= link_to 'Delete', company_path(@company), method: :delete, data: {confirm: "Are you totally sure??"}, class: 'btn btn-danger' %>
+        <%= link_to 'Edit', edit_company_path(@company), class: 'btn btn-warning' %>
+        <%= link_to 'Back', companies_path, class: 'btn btn-default' %>
+      </li>
     </ul>
   </div>
 </div>
 
 <p>
-  <%= link_to 'Delete', company_path(@company), method: :delete, data: {confirm: "Are you totally sure??"}, class: 'btn btn-danger' %>
-  <%= link_to 'Edit', edit_company_path(@company), class: 'btn btn-warning' %>
-  <%= link_to 'Back', companies_path, class: 'btn btn-default' %>
-</p>
-<p>
-  <h1>Locations</h1>
+  <h3>Locations</h3>
 </p>
 
 <table class="table">
@@ -43,6 +43,31 @@
       <td><%= location.zip_code %></td>
       <td><%= location.country %></td>
       <td><%= link_to 'Delete', company_location_path(@company, location), method: :delete, data: {confirm: "Are you totally sure??"}, class: 'btn btn-danger' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+  <h3>Products</h3>
+</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @company.products.each do |product| %>
+    <tr>
+      <td><b><%= product.name %></b></td>
+      <td><%= product.department %></td>
+      <td>$<%= product.price %></td>
+      <td><%= link_to 'Delete', company_product_path(@company, product), method: :delete, data: {confirm: "Are you totally sure??"}, class: 'btn btn-danger' %></td>
     </tr>
     <% end %>
   </tbody>

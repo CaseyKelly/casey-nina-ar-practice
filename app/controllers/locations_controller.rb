@@ -9,7 +9,7 @@ class LocationsController < ApplicationController
   end
 
   def index
-    @locations = Location.all
+    @locations = Company.locations
   end
 
   def edit
@@ -17,7 +17,7 @@ class LocationsController < ApplicationController
 
   def create
     @location = Location.new(location_params)
-    @company = Company.find(params[:id])
+    @company = Company.find(params[:company_id])
     redirect_to company_path(@company)
   end
 
