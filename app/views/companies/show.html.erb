@@ -1,0 +1,19 @@
+<div class="page-header">
+  <h1><%= @company.name %></h1>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <ul class="list-group">
+      <li class="list-group-item"><%= @company.name %> <%= @company.suffix %></li>
+      <li class="list-group-item"><b>Catch Phrase: </b><%= @company.catch_phrase %></li>
+      <li class="list-group-item"><b>Email: </b><%= @company.email %></li>
+      <li class="list-group-item"><b>Start Date: </b><%= @company.start_date %></li>
+      <li class="list-group-item"><b>Industry: </b><%= @company.industry %></li>
+    </ul>
+  </div>
+</div>
+
+<p>
+  <%= link_to 'Back', companies_path, class: 'btn btn-default' %>
+</p>
