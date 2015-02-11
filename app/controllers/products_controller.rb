@@ -33,11 +33,12 @@ class ProductsController < ApplicationController
     end
 
     def show
-      @company =Company.find(params[:company_id])
-      @product = @company.product
+      @company = Company.find(params[:company_id])
+      @product.company_id = params[:company_id]
     end
 
     def edit
+    
     end
 
     private

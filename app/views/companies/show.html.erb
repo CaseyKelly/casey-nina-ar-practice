@@ -64,9 +64,10 @@
   <tbody>
     <% @company.products.each do |product| %>
     <tr>
-      <td><b><%= product.name %></b></td>
+      <td><b><%= link_to product.name, company_product_path(@company, product) %></b></td>
       <td><%= product.department %></td>
       <td>$<%= product.price %></td>
+      <td><%= link_to 'New Review', new_company_product_review_path(@company, product), class: 'btn btn-primary' %></td>
       <td><%= link_to 'Delete', company_product_path(@company, product), method: :delete, data: {confirm: "Are you totally sure??"}, class: 'btn btn-danger' %></td>
     </tr>
     <% end %>
