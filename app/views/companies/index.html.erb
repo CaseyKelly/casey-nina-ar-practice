@@ -23,7 +23,8 @@
       <td><%= company.email %></td>
       <td><%= company.start_date %></td>
       <td><%= company.industry %></td>
-      <td><%= link_to 'New Location', new_company_location_path(company), class: 'btn btn-success' %></td>
+      <td><%= link_to 'New Location', new_company_location_path(company), class: 'btn btn-default' %></td>
+      <td><%= link_to 'New Product', new_company_product_path(company), class: 'btn btn-default' %></td>
       <td><%= link_to 'Delete', company_path(company), method: :delete, data: {confirm: "Are you totally sure??"}, class: 'btn btn-danger' %></td>
     </tr>
     <% end %>

@@ -18,8 +18,9 @@ class LocationsController < ApplicationController
   end
 
   def create
-    @location = Location.new(params[:id])
+    @location = Location.new(location_params)
     @company = Company.find(params[:company_id])
+    @location.company_id = params[:company_id]
     if @location.save
       redirect_to company_path(@company)
     else

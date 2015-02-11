@@ -1,0 +1,19 @@
+<%= form_for [@company, @product] do |f| %>
+  <p>
+    <%= f.label :department %>
+    <%= f.text_field :department %>
+  </p>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+  </p>
+  <p>
+    <%= f.submit class: 'btn btn-primary' %>
+    <%= link_to 'Back', company_path(@company), class: 'btn btn-default' %>
+  </p>
+
+<% end %>

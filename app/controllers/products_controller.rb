@@ -2,15 +2,18 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
     def index
-      @products = Product.all
+      @products = Company.products
     end
 
     def new
       @product = Product.new
+      @company = Company.find(params[:company_id])
     end
 
     def create
-      @product = Product.new(params[:id])
+      @product = Product.new(product_params)
+      @company = Company.find(params[:company_id])
+      @product.company_id = params[:company_id]
       if @product.save
         redirect_to company_path(@company)
       else
