@@ -8,6 +8,7 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
     @product = Product.find(params[:product_id])
+    @company = Company.find(params[:company_id])
   end
 
   def show
@@ -21,6 +22,7 @@ class ReviewsController < ApplicationController
       redirect_to company_path(@company)
     else
       render :new
+    end
   end
 
   def update

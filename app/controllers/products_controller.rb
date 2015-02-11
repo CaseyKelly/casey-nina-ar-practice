@@ -23,6 +23,7 @@ class ProductsController < ApplicationController
 
     def update
       @product.update(product_params)
+      @company = @product.company
       redirect_to company_path(@company)
     end
 
@@ -35,10 +36,12 @@ class ProductsController < ApplicationController
     def show
       @company = Company.find(params[:company_id])
       @product.company_id = params[:company_id]
+      @review.product_id = params[:product_id]
     end
 
     def edit
-    
+      @company = Company.find(params[:company_id])
+
     end
 
     private

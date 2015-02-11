@@ -28,6 +28,7 @@ class CompaniesController < ApplicationController
 
   def update
     @company.update(company_params)
+    redirect_to company_path(@company)
   end
 
   def destroy

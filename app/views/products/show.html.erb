@@ -16,3 +16,28 @@
     </ul>
   </div>
 </div>
+
+<p>
+  <h3>Reviews</h3>
+</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @company.products.review.each do |review| %>
+    <tr>
+      <td><b><%= review.title %></b></td>
+      <td><%= review.description %></td>
+      <td><%= review.rating %></td>
+      <td><%= link_to 'Delete', company_product_review_path(@company, @product, review), method: :delete, data: {confirm: "Are you totally sure??"}, class: 'btn btn-danger' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
