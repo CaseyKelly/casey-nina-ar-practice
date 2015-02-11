@@ -5,7 +5,7 @@
 <div class="row">
   <div class="col-md-4">
     <ul class="list-group">
-      <li class="list-group-item"><%= @company.name %> <%= @company.suffix %></li>
+      <li class="list-group-item"><b>Name: </b><%= @company.name %> <%= @company.suffix %></li>
       <li class="list-group-item"><b>Catch Phrase: </b><%= @company.catch_phrase %></li>
       <li class="list-group-item"><b>Email: </b><%= @company.email %></li>
       <li class="list-group-item"><b>Start Date: </b><%= @company.start_date %></li>
@@ -15,5 +15,6 @@
 </div>
 
 <p>
+  <%= link_to 'Delete', company_path(@company), method: :delete, data: {confirm: "Are you totally sure??"}, class: 'btn btn-danger' %>
   <%= link_to 'Back', companies_path, class: 'btn btn-default' %>
 </p>
