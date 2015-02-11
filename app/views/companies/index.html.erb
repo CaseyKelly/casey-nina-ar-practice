@@ -24,7 +24,6 @@
       <td><%= company.start_date %></td>
       <td><%= company.industry %></td>
       <td><%= link_to 'Delete', company_path(company), method: :delete, data: {confirm: "Are you totally sure??"}, class: 'btn btn-danger' %></td>
-      <td><%= link_to 'Edit', edit_company_path(company), class: 'btn btn-warning' %></td>
     </tr>
     <% end %>
   </tbody>

@@ -19,3 +19,31 @@
   <%= link_to 'Edit', edit_company_path(@company), class: 'btn btn-warning' %>
   <%= link_to 'Back', companies_path, class: 'btn btn-default' %>
 </p>
+<p>
+  <h1>Locations</h1>
+</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>City</th>
+      <th>Street Name</th>
+      <th>State</th>
+      <th>Zip Code</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @company.locations.each do |location| %>
+    <tr>
+      <td><b><%= location.city %></b></td>
+      <td><%= location.street_name %></td>
+      <td><%= location.state %></td>
+      <td><%= location.zip_code %></td>
+      <td><%= location.country %></td>
+      <td><%= link_to 'Delete', company_location_path(@company, location), method: :delete, data: {confirm: "Are you totally sure??"}, class: 'btn btn-danger' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
