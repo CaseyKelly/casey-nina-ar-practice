@@ -3,22 +3,28 @@ class LocationsController < ApplicationController
 
   def new
     @location = Location.new
+    @company = Company.find(params[:company_id])
   end
 
   def show
   end
 
   def index
-    @locations = Company.locations
+    @company = Company.find(params[:company_id])
+    @locations = @company.locations
   end
 
   def edit
   end
 
   def create
-    @location = Location.new(location_params)
+    @location = Location.new(params[:id])
     @company = Company.find(params[:company_id])
-    redirect_to company_path(@company)
+    if @location.save
+      redirect_to company_path(@company)
+    else
+      render :new
+    end
   end
 
   def destroy
