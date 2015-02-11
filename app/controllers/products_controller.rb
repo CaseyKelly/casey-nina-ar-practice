@@ -36,7 +36,6 @@ class ProductsController < ApplicationController
     def show
       @company = Company.find(params[:company_id])
       @product.company_id = params[:company_id]
-      @review.product_id = params[:product_id]
     end
 
     def edit
